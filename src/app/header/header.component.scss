@@ -2,7 +2,15 @@
 
 .wei-header-container {
   display: flex;
-  width: 100%;
   background-color: $wei-primary;
+
+  @include breakpoint($sm-bp) {
+    padding: 50px;
+  }
+  @include breakpoint($md-bp) {
+    padding: 25px;
+  }
 }
+
+
 
