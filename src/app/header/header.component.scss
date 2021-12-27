@@ -5,10 +5,10 @@
   background-color: $wei-primary;
 
   @include breakpoint($sm-bp) {
-    padding: 50px;
+    height: $header-mobile;
   }
   @include breakpoint($md-bp) {
-    padding: 25px;
+    height: $header-normal;
   }
 }
 

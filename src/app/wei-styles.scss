@@ -1,28 +1,32 @@
 $wei-primary: black;
-$wei-secondary: blue;
+$wei-secondary: white;
 $wei-active: lightblue;
 
 $sm-bp: 320px;
 $sm-bp-end: 480px;
 $md-bp: 481px;
-$lg-bp: 769px;
-$xl-bp: 1025px;
-$xxl-bp: 1201px;
+$sd-bp: 769px;
+$lg-bp: 1025px;
+$xl-bp: 1201px;
+
+$sd-unit: 8px;
+$header-mobile: $sd-unit * 6;
+$header-normal: $sd-unit * 8;
 
 @mixin breakpoint($point) {
-  @if $point == $xxl-bp {
-    @media (min-width: $xxl-bp) { @content ; }
-  }
-  @else if $point == $xl-bp {
+  @if $point == $xl-bp {
     @media (min-width: $xl-bp) { @content ; }
   }
   @else if $point == $lg-bp {
     @media (min-width: $lg-bp) { @content ; }
   }
+  @else if $point == $sd-bp {
+    @media (min-width: $sd-bp) { @content ; }
+  }
   @else if $point == $md-bp {
     @media (min-width: $md-bp) { @content ; }
   }
   @else if $point == $sm-bp {
-    @media (max-width: $sm-bp-end) { @content ; }
+    @media (max-width: $sm-bp-end) { min-width: $sm-bp; @content ; }
   }
 }
