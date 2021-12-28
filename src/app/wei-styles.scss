@@ -12,6 +12,14 @@ $xl-bp: 1201px;
 $sd-unit: 8px;
 $header-mobile: $sd-unit * 6;
 $header-normal: $sd-unit * 8;
+$sd-button-padding: $sd-unit * 2;
+
+.wei-button {
+  padding: $sd-button-padding;
+  background-color: $wei-secondary;
+  border-radius: $sd-unit;
+
+}
 
 @mixin breakpoint($point) {
   @if $point == $xl-bp {
