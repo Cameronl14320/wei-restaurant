@@ -2,16 +2,16 @@
 
 .wei-header-container {
   display: flex;
+  width: 100%;
   background-color: $wei-primary;
+  height: $header-mobile;
 
-  @include breakpoint($sm-bp) {
-    height: $header-mobile;
-  }
   @include breakpoint($md-bp) {
     height: $header-normal;
   }
 }
 .wei-header-buttons {
+  padding: $sd-content-padding;
   display: flex;
   align-items: center;
 }

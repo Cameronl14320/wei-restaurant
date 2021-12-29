@@ -1,26 +1,3 @@
-$wei-primary: black;
-$wei-secondary: white;
-$wei-active: lightblue;
-
-$sm-bp: 320px;
-$sm-bp-end: 480px;
-$md-bp: 481px;
-$sd-bp: 769px;
-$lg-bp: 1025px;
-$xl-bp: 1201px;
-
-$sd-unit: 8px;
-$header-mobile: $sd-unit * 6;
-$header-normal: $sd-unit * 8;
-$sd-button-padding: $sd-unit * 2;
-
-.wei-button {
-  padding: $sd-button-padding;
-  background-color: $wei-secondary;
-  border-radius: $sd-unit;
-
-}
-
 @mixin breakpoint($point) {
   @if $point == $xl-bp {
     @media (min-width: $xl-bp) { @content ; }
@@ -35,6 +12,45 @@ $sd-button-padding: $sd-unit * 2;
     @media (min-width: $md-bp) { @content ; }
   }
   @else if $point == $sm-bp {
-    @media (max-width: $sm-bp-end) { min-width: $sm-bp; @content ; }
+    @media (max-width: $sm-bp) { min-width: $sm-bp; @content ; }
   }
+}
+
+$wei-primary: black;
+$wei-secondary: white;
+$wei-active: lightblue;
+$wei-border: lightgray;
+
+$sm-bp: 320px;
+$sm-bp-end: 480px;
+$md-bp: 481px;
+$sd-bp: 769px;
+$lg-bp: 1025px;
+$xl-bp: 1201px;
+
+$sd-unit: 8px;
+$sd-margin: $sd-unit / 2;
+$sd-content-padding: $sd-unit * 2;
+
+$header-mobile: $sd-unit * 6;
+$header-normal: $sd-unit * 8;
+
+$font-regular: 16px;
+$font-small: $sd-unit * 2;
+$font-medium: $sd-unit * 3;
+$font-large: $sd-unit * 4;
+
+.wei-button {
+  margin: 0 $sd-margin 0 0;
+  text-decoration: none;
+  font-size: $font-regular;
+  color: $wei-secondary;
+
+  @include breakpoint($md-bp) {
+    font-size: $font-medium;
+  }
+}
+
+.wei-button--active {
+  color: $wei-active;
 }

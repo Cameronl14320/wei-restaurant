@@ -2,9 +2,14 @@
   <div class="wei-header-buttons">
     <a
       class="wei-button"
-      [routerLink]="['']">Dashboard</a>
+      [routerLink]="['']"
+      routerLinkActive="wei-button--active"
+      [routerLinkActiveOptions]="{exact: true}">Dashboard</a>
     <a
       class="wei-button"
-      [routerLink]="['menu']">Menu</a>
+      [routerLink]="['menu']"
+      routerLinkActive="wei-button--active">Menu</a>
   </div>
 </div>
+
+
